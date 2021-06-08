@@ -7,13 +7,13 @@ with open('LICENSE') as f:
     license = f.read()
 
 setup(
-    name='Google_Patents_PDF_Downloader',
+    name='GooglePatentsPdfDownloader',
     version='0.1.0',
-    description='Download Patents as PDF from Google Patents',
+    description='Download patents as PDF documents from Google Patents',
     long_description=readme,
     author='Lorenz Brachtendorf',
     author_email='lorenz.brachtendorf@gmx.de',
-    url='https://github.com/lorenzbr/Google_Patents_PDF_Downloader',
+    url='https://github.com/lorenzbr/GooglePatentsPdfDownloader',
     license=license,
     packages=find_packages(exclude=('tests', 'docs'))
 )

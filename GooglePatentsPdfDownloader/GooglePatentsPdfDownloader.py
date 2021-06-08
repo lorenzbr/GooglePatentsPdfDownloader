@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 import time
 import re
 
-class Google_Patents_PDF_Downloader:
+class GooglePatentsPdfDownloader:
     
     url = "https://patents.google.com"
     
