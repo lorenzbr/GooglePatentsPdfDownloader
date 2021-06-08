@@ -1,6 +1,6 @@
 # Google_Patents_PDF_Downloader
 
-Download patents as PDF documents from Google Patents
+Download patents as PDF documents from [Google Patents](https://patents.google.com)
 
 
 ## Installation

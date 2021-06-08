@@ -2,4 +2,5 @@ requests
 bs4
 pandas
 selenium
+numpy
 -e

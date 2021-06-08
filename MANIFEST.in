@@ -4,4 +4,4 @@ include LICENSE
 include README.md
 
 graft examples
-graft pystandards
+graft Google_Patents_PDF_Downloader
