@@ -17,6 +17,6 @@ setup(
     license = license,
     packages = find_packages(exclude = ('tests', 'docs')),
     install_requires = ['requests', 'bs4', 'pandas', 'selenium', 'numpy'],
+    package_data = {'docs/data': ['patents.txt']},
     include_package_data = True
 )
-
