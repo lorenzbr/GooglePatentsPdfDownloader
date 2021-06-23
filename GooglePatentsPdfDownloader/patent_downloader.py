@@ -124,17 +124,3 @@ class patent_downloader:
             i += 1
             
             print(str(remaining) + " patent(s) remaining.")
-
-            
-            
-            
-
-        
-        
-        
-        
-        
-        
-        
-
-        

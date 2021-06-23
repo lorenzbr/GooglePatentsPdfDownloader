@@ -31,8 +31,10 @@ Specify either `patents` or `file` in the function `get_pdfs` to download the PD
 from GooglePatentsPdfDownloader.patent_downloader import patent_downloader
 patent_downloader = patent_downloader(verbose = True)
 
-# Download a single patent to the current working directory
+# Download a single patent to the current working directory (not found w/ kind code)
 patent_downloader.get_pdf(patent = "US4405829A1", output_path = "", driver_file = "chromedriver.exe")
+patent_downloader.get_pdf(patent = "US4405829", output_path = "", driver_file = "chromedriver.exe")
+
 
 # Download multiple patents using a list of inputs to the current working directory
 patent_downloader.get_pdfs(patents = ["US4405829A1", "EP0551921B1", "EP1304824B1"],
