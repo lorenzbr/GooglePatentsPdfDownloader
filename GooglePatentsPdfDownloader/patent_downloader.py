@@ -128,13 +128,13 @@ class PatentDownloader:
                 raise NotImplementedError(f'Unsupported file type: {patents}')
 
         for i, patent in enumerate(patents):
+            print(len(patents) - i, "patent(s) remaining.")
             self.get_pdf(
                 patent=patent,
                 output_path=output_path,
                 waiting_time=waiting_time,
                 remove_kind_codes=remove_kind_codes
             )
-            print(len(patents) - i+1, "patent(s) remaining.")
 
     @staticmethod
     def get_pdf_link(soup: BeautifulSoup, patent: str):
