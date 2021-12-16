@@ -20,7 +20,7 @@ class PatentDownloader:
         ----------
         chrome_driver : str
             Path and file name of the Chrome driver exe. Default is "chromedriver.exe".
-        app : str, optional
+        brave : bool, optional
             Change Chrome application for Brave by passing 'brave'. Default is None.
         """
         self.verbose = verbose  # TODO: unused attribute?
@@ -108,6 +108,7 @@ class PatentDownloader:
 
         if pdf_link:
             path_prefix = os.path.abspath(output_path)
+            validate_directory(path_prefix)
             patent_file = requests.get(pdf_link)
             with open(os.path.join(path_prefix, f'{patent}.pdf'), 'wb') as pdf_file:
                 pdf_file.write(patent_file.content)
@@ -154,10 +155,16 @@ def brave_application_path() -> str:
         r'C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe',
         r'C:\Program Files (x86)\BraveSoftware\Brave-Browser\Application\brave.exe',
     ]
-    # TODO: add paths
+    # TODO: add paths?
     for win_path in win_paths:
         if os.path.isfile(win_path):
             return win_path
         else:
             pass
     raise FileNotFoundError
+
+
+def validate_directory(directory: str) -> None:
+    if os.path.isdir(directory):
+        return None
+    os.mkdir(directory)
