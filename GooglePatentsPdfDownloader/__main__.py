@@ -11,7 +11,7 @@ parser.add_argument(
 parser.add_argument(
     '--driver', help='Path and file name of the Chrome driver exe', default='chromedriver.exe')
 parser.add_argument(
-    '--app', help='Switch application from Google Chrome to Brave. Valid value: "brave"')
+    '--brave', help='Switch application from Google Chrome to Brave.', action='store_true')
 parser.add_argument(
     '--output', help='An output path where documents are saved', default='./pdf')
 parser.add_argument(
@@ -29,8 +29,8 @@ kwargs = dict(
     remove_kind_codes=args.rm_kind
 )
 
-if args.app:
-    pat_dl = PatentDownloader(chrome_driver=args.driver, app=args.app)
+if args.brave:
+    pat_dl = PatentDownloader(chrome_driver=args.driver, brave=args.brave)
 else:
     pat_dl = PatentDownloader(chrome_driver=args.driver)
 

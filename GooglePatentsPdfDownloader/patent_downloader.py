@@ -13,7 +13,7 @@ class PatentDownloader:
     
     url = "https://patents.google.com"
     
-    def __init__(self, chrome_driver: str = 'chromedriver.exe', app: Optional[str] = None, verbose: bool = False):
+    def __init__(self, chrome_driver: str = 'chromedriver.exe', brave: bool = False, verbose: bool = False):
         """
 
         Parameters
@@ -26,7 +26,7 @@ class PatentDownloader:
         self.verbose = verbose  # TODO: unused attribute?
         self.driver_file = chrome_driver
         self.option = None
-        if app == 'brave':
+        if brave:
             brave_path = brave_application_path()
             self.option = webdriver.ChromeOptions()
             self.option.binary_location = brave_path
@@ -141,7 +141,7 @@ class PatentDownloader:
         pdfs: List[str] = [link['href'] for link in soup.find_all('a', href=True)
                            if link['href'].lower().endswith('pdf')]
         for pdf in pdfs:
-            if patent.lower() in pdf.lower():  # TODO: ignore kind code?
+            if patent.lower() in pdf.lower():  # TODO: ignore/remove kind code?
                 return pdf  # return first matching pdf link
             else:
                 continue
