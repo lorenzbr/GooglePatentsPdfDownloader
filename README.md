@@ -22,7 +22,7 @@ python -m GooglePatentsPdfDownloader
 
 optional arguments:
   --driver    Path and file name of the Chrome driver exe
-  --app       Switch application from Google Chrome to Brave. Valid value: "brave"
+  --brave      Switch application from Google Chrome to Brave.
   --output    An output path where documents are saved
   --time      Waiting time in seconds for each request.
   --rm-kind   A list containing the patent kind codes which should be removed from patent numbers
@@ -34,13 +34,13 @@ Download a single patent to the current working directory (not found w/ kind cod
 python -m GooglePatentsPdfDownloader US4405829A1 --rm_kind A1
 python -m GooglePatentsPdfDownloader EP0551921B1
 ```
-Download multiple patents using a list of inputs to ./pdf directory
+Download multiple patents using a list of inputs to ./patents directory
 ```bash
-python -m GooglePatentsPdfDownloader US4405829 EP0551921B1 --output "./pdf"
+python -m GooglePatentsPdfDownloader US4405829 EP0551921B1 --output "./patents"
 ```
 With Brave browser download multiple patents using a txt file to the current working director
 ```bash
-python -m GooglePatentsPdfDownloader docs/data/patents.txt --app brave
+python -m GooglePatentsPdfDownloader docs/data/patents.txt --brave
 ```
 
 ## Examples (modular)
