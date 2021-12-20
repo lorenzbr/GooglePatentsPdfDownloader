@@ -1,1 +1,1 @@
-import GooglePatentsPdfDownloader
+from .patent_downloader import PatentDownloader
