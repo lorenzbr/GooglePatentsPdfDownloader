@@ -2,7 +2,7 @@
 ## URL: https://patents.google.com
 
 from GooglePatentsPdfDownloader import PatentDownloader
-patent_downloader = PatentDownloader(chrome_driver='chromedriver.exe', app='brave')
+patent_downloader = PatentDownloader(chrome_driver='chromedriver.exe', brave=True)
 
 # Download a single patent to the current working directory (not found w/ kind code)
 patent_downloader.download(patent="US4405829A1", remove_kind_codes=['A1'])
